@@ -54,6 +54,7 @@ class HunterManager():
                 print '[-] Key has no stamina...quitting!'
                 sys.exit()
             self.apikey = HunterKey(args['apikey'],kr)
+            self.apilist.append(self.apikey)
         elif args['apilist'] is not None:
             self.apilist = []
             with open(args['apilist'],'r') as f:
@@ -182,6 +183,8 @@ def main(args):
     print '[+] Retrieving new staminas:'
     print table2.draw()+'\n'
 
+    of.close()
+    
 if __name__ == '__main__':
     try:
         main(args)
