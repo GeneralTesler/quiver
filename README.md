@@ -1,6 +1,6 @@
 # Quiver - Hunter.io Faceprinter
 
-Searches [Hunter.io](https://hunter.io/) for emails from a supplied domain. You can provide either an API key or a file containing a list of keys. If a list is supplied, the script will exhaust each key in order. Additionally, you can set the free tier flag to prevent the script from running if the target organization requires more queries than the free tier allows.
+Searches [Hunter.io](https://hunter.io/) for emails from a supplied domain. You can provide either an API key or a file containing a list of keys (newline delimited list). If a list is supplied, the script will exhaust each key in order. Additionally, you can set the free tier flag to prevent the script from running if the target organization requires more queries than the free tier allows.
 
 *Note: this is still a somewhat beta release and requires some additional testing. If you have any feedback, please open an issue.*
 
