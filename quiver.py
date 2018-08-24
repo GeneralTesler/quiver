@@ -42,6 +42,7 @@ class HunterManager():
         '''exit if api key and API file are both supplied or neither are supplied
            check stamina (number of requests left) of each key'''
         self.kt = 0
+        self.apilist = []
         if args['apikey'] is None and args['apilist'] is None:
             print '[-] Missing API input...quitting!'
             sys.exit()
@@ -53,10 +54,9 @@ class HunterManager():
             if self.kt <= 0:
                 print '[-] Key has no stamina...quitting!'
                 sys.exit()
-            self.apikey = HunterKey(args['apikey'],kr)
+            self.apikey = HunterKey(args['apikey'],self.kt)
             self.apilist.append(self.apikey)
         elif args['apilist'] is not None:
-            self.apilist = []
             with open(args['apilist'],'r') as f:
                 for key in f.readlines():
                     kr = self.checkkeystatus(key.strip())
